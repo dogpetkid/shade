@@ -7,7 +7,7 @@ using UnityEngine;
 public class ray_marcher : MonoBehaviour
 {
 
-    const float max_distance = 10f;
+    const float max_distance = 5f;
     const float epsilon = 0.001f;
 
     // find the distance
@@ -26,7 +26,7 @@ public class ray_marcher : MonoBehaviour
     /// <returns> Returns true if the ray collides with an object </returns>
     public static bool cast(Ray2D start_ray, ref List<Collider2D> objects, out Collider2D collision, out Vector2 point)
     {
-        Random.InitState(10); // arbitrary debug seed
+        // Random.InitState(10); // arbitrary debug seed
 
         collision = new Collider2D();
         point = start_ray.GetPoint(max_distance);
@@ -39,7 +39,7 @@ public class ray_marcher : MonoBehaviour
         {
             // continue to take steps of distance of the closest object until some object is closer than epsilon
             closestFromList(current_ray.origin, ref objects, out closest, out distance);
-            Debug.DrawLine(current_ray.origin, current_ray.GetPoint(distance), Random.ColorHSV(), 0);
+            // Debug.DrawLine(current_ray.origin, current_ray.GetPoint(distance), Random.ColorHSV(), 0);
             ray_dist += distance;
             current_ray = new Ray2D(current_ray.GetPoint(distance), start_ray.direction);
             if (distance < epsilon)
