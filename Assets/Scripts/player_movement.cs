@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player_movement : MonoBehaviour
 {
@@ -27,5 +28,7 @@ public class player_movement : MonoBehaviour
             // Debug.Log("Jump");
             _rigidbody.AddForce(new Vector2(0, player_move_jspeed), ForceMode2D.Impulse);
         }
+
+        if (Input.GetButtonDown("Cancel")) SceneManager.LoadScene("SampleScene"); // temporary reset
     }
 }
