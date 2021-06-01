@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("Use lamp.cs instead")]
 public class player_lamp : MonoBehaviour
 {
 
@@ -9,7 +10,6 @@ public class player_lamp : MonoBehaviour
     const float lamp_step = 2*Mathf.PI / lamp_rays;
 
     List<Collider2D> objects;
-
     public GameObject pixel_prefab;
     List<GameObject> lamp_pixels;
 

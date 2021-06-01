@@ -7,14 +7,8 @@ using UnityEngine;
 public class ray_marcher : MonoBehaviour
 {
 
-    public const float max_distance = 5f;
+    public static float max_distance = 5f;
     public const float epsilon = 0.001f;
-
-    // find the distance
-    public static float signCircleDistance(Vector2 eye, Vector2 center, float radius)
-    {
-        return Vector2.Distance(eye, center) - radius;
-    }
 
     /// <summary>
     /// Casts a ray and sees what it with from the list of objects
